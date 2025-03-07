@@ -11,12 +11,18 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  // ✅ Login user and return JWT token
   async login(loginDto: LoginDto) {
     const user = await this.usersService.findByUsername(loginDto.username);
-    if (!user || !(await bcrypt.compare(loginDto.password, user.password))) {
-      throw new UnauthorizedException('Invalid credentials');
+    if (!user) {
+      throw new UnauthorizedException('Invalid username or password');
     }
-    
+
+    const isPasswordValid = await bcrypt.compare(loginDto.password, user.password);
+    if (!isPasswordValid) {
+      throw new UnauthorizedException('Invalid username or password');
+    }
+
     const payload = { username: user.username, sub: user.id, role: user.role };
     return { access_token: this.jwtService.sign(payload) };
   }
