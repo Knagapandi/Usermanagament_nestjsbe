@@ -4,7 +4,9 @@
 ✅ Role-Based Access Control  
 ✅ Secure Password Hashing with `bcrypt`  
 ✅ PostgreSQL Database Integration using `TypeORM`  
-✅ API Documentation with Swagger  
+✅ API Documentation with Swagger 
+✅ Global Error Handling & Validation
+✅ Unit Testing with Jest 
 
 ---
 
@@ -156,4 +158,5 @@ Copy
 Edit
 app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 ✅ This ensures that invalid data is never processed.
+
 GitHub Repository: https://github.com/Knagapandi/Usermanagament_nestjsbe

@@ -10,8 +10,7 @@ export class AuthService {
     private usersService: UsersService,
     private jwtService: JwtService,
   ) {}
-
-  // ✅ Login user and return JWT token
+  
   async login(loginDto: LoginDto) {
     const user = await this.usersService.findByUsername(loginDto.username);
     if (!user) {
