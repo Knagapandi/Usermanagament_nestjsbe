@@ -15,6 +15,7 @@ export class UsersService {
 
   //  Create a new user with hashed password & role check
   async create(createUserDto: CreateUserDto): Promise<User> {
+    
     // Check if username already exists
     const existingUser = await this.usersRepository.findOne({ where: { username: createUserDto.username } });
     if (existingUser) {

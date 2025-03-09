@@ -9,18 +9,19 @@ async function bootstrap() {
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
-  // Swagger Configuration
   const config = new DocumentBuilder()
     .setTitle('User Management API')
     .setDescription('API documentation for authentication and user management')
     .setVersion('1.0')
     .addBearerAuth()
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
   await app.listen(3000);
-  console.log('Swagger API Docs available at http://localhost:3000/api');
+  console.log('Server running at http://localhost:3000');
+  console.log('Swagger API Docs: http://localhost:3000/api');
 }
 
 bootstrap();
