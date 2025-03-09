@@ -16,7 +16,7 @@
 - **JWT** (Authentication)
 - **Postman** (API Testing)
  Below is a detailed explanation of each feature you implemented.
- 
+
 📌 1. User Authentication (Register, Login, Logout)
 ✔️ Implemented user registration (POST /auth/register) to create new users.
 ✔️ Implemented user login (POST /auth/login) to verify credentials and generate a JWT token.
@@ -156,4 +156,4 @@ Copy
 Edit
 app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 ✅ This ensures that invalid data is never processed.
-GitHub Repository: https://github.com/your-repo
+GitHub Repository: https://github.com/Knagapandi/Usermanagament_nestjsbe
