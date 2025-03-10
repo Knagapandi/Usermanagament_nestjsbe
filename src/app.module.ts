@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { DocumentModule } from './document/document.module';
+import { IngestionModule } from './ingestion/ingestion.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 
@@ -20,6 +22,8 @@ import { User } from './users/entities/user.entity';
     }),
     AuthModule,
     UsersModule,
+    DocumentModule,
+    IngestionModule
   ],
 })
 export class AppModule {}
