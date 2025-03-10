@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm';
 
 @Entity()
 export class Document {
@@ -6,8 +6,14 @@ export class Document {
   id: number;
 
   @Column()
-  name: string;
+  filename: string;
+
+  @Column()
+  mimetype: string;
 
   @Column()
   path: string;
+
+  @CreateDateColumn()
+  uploadedAt: Date;
 }
